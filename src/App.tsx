@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+
 
 function App() {
+  function loggingIdentity<T>(arg: T[]): T[] {
+    console.log(arg.length);
+    console.log(arg[2]);
+    return arg;
+  }
+  
+  function test(arg: number[]): number[] {
+    console.log(arg.length);
+    console.log(arg[4]);
+    return arg;
+  }
+  
+  function test2<T>(arg: T): T  {
+    console.log(arg);
+    return arg;
+  }
+  
+  let test3 = test2({name: "nambui"});
+  console.log(test3.name)
+  
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Typescript Playground</h1>
     </div>
   );
 }
