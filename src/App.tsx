@@ -1,35 +1,32 @@
-import React from 'react';
+import React from 'react'
+import Sandbox1b from './components/sanbox1/sandbox1'
+import Sandbox1 from './components/sanbox1/sandbox1'
 
 
+const App: React.FC = () => {
+   const functionOne = () => {
+       console.log("hello from function1")
+   }
+   const functionWithPara = (name: string, age: number) => {
+        console.log(age);
+        return age;
+   }
+    return (
+       <>
+            <h1>
+                Typescript Playground
+            </h1>
+            <Sandbox1 
+                text="string"
+                object={{name: "nambui"}}
+                objectUseInterface={{like: "football", hate: "nothing"}}
+                function1 = {functionOne}
+                functionWithPara = {functionWithPara}
 
-function App() {
-  function loggingIdentity<T>(arg: T[]): T[] {
-    console.log(arg.length);
-    console.log(arg[2]);
-    return arg;
-  }
-  
-  function test(arg: number[]): number[] {
-    console.log(arg.length);
-    console.log(arg[4]);
-    return arg;
-  }
-  
-  function test2<T>(arg: T): T  {
-    console.log(arg);
-    return arg;
-  }
-  
-  let test3 = test2({name: "nambui"});
-  console.log(test3.name)
-  
-  
-  
-  return (
-    <div className="App">
-      <h1>Typescript Playground</h1>
-    </div>
-  );
+            />
+            
+        </>
+    )
 }
 
 export default App;
