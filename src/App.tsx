@@ -1,7 +1,7 @@
 import React from 'react'
 import Sandbox1b from './components/sanbox1/sandbox1'
 import Sandbox1 from './components/sanbox1/sandbox1'
-
+import Sandbox2 from './components/sandbox2/Sandbox2';
 
 const App: React.FC = () => {
    const functionOne = () => {
@@ -10,6 +10,9 @@ const App: React.FC = () => {
    const functionWithPara = (name: string, age: number) => {
         console.log(age);
         return age;
+   }
+   const sandbox2Function = (prefer: String): boolean => {
+       return prefer === "likegirls" ? true : false
    }
     return (
        <>
@@ -23,6 +26,10 @@ const App: React.FC = () => {
                 function1 = {functionOne}
                 functionWithPara = {functionWithPara}
 
+            />
+            <Sandbox2 
+                isGay={false}
+                sanbox2Function={sandbox2Function}
             />
             
         </>
